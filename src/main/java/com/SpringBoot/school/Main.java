@@ -7,13 +7,13 @@ public class Main {
     public static void main(String[] args) {
 
 
-        ApplicationContext context = new AnnotationConfigApplicationContext(com.SpringBoot.school.SchoolConfig.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(SchoolConfig.class);
 
-        com.SpringBoot.school.Enrollment enrollment = context.getBean(com.SpringBoot.school.Enrollment.class);
+        Enrollment enrollment = context.getBean(Enrollment.class);
 
         enrollment.enroll("Software Engineering");
 
-       
+
         enrollment.printStudentCard();
     }
 }

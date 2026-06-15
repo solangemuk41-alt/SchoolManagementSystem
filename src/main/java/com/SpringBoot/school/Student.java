@@ -8,11 +8,7 @@ public class Student {
     private int age;
     private String course;
 
-    public Student() {
-        this.name = "Unknown";
-        this.age = 0;
-        this.course = "Unassigned";
-    }
+
 
     public Student(String name, int age, String course) {
         this.name = name;
