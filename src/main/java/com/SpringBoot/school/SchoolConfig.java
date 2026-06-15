@@ -7,14 +7,28 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SchoolConfig {
 
-
     @Bean
-    public com.SpringBoot.school.Student student() {
-        return new com.SpringBoot.school.Student("Amina Uwase", 20, "Computer Science");
+    public Person person() {
+        return new Person("Jean Pierre", 35, "jeanpierre@school.rw");
     }
 
     @Bean
-    public com.SpringBoot.school.Enrollment enrollment() {
-        return new com.SpringBoot.school.Enrollment(student());
+    public Teacher teacher() {
+        return new Teacher("Mr. Manzi", "Computer Science", 10);
+    }
+
+    @Bean
+    public Course course() {
+        return new Course("Software Engineering", "CS301", 4, teacher());
+    }
+
+    @Bean
+    public Student student() {
+        return new Student("teta Uwase", 20, "Software Engineering");
+    }
+
+    @Bean
+    public Enrollment enrollment() {
+        return new Enrollment(student());
     }
 }

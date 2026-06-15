@@ -3,33 +3,22 @@ package com.SpringBoot.school;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Student {
-    private String name;
-    private int age;
+public class Student extends Person {
+    private String studentId;
     private String course;
 
-
-
     public Student(String name, int age, String course) {
-        this.name = name;
-        this.age = age;
+        super(name, age, name.toLowerCase().replace(" ", "") + "@student.rw");
+        this.studentId = "STU" + (int)(Math.random() * 1000);
         this.course = course;
     }
 
-    public String getName() {
-        return name;
+    public String getStudentId() {
+        return studentId;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
 
     public String getCourse() {
@@ -40,7 +29,8 @@ public class Student {
         this.course = course;
     }
 
+    @Override
     public void displayInfo() {
-        System.out.println("Student: " + name + " | Age: " + age + " | Course: " + course);
+        System.out.println("Student : " + getName() + " | Age: " + getAge() + " | ID: " + studentId + " | Course: " + course);
     }
 }
